@@ -7,12 +7,17 @@ class UserController extends ControllerBase
     {
         $users=User::find(array("order"=>$sField));
         $this->view->setVar("users",$users);
+
     }
 
     public function formAction($id=NULL){
-
+        $users=User::findfirst($id);
+        $this->view->setVar("user",$users);
+        $roles=Role::find();
+        $this->view->setVar("roles",$roles);
 
     }
+
 
     public function updateAction($id=NULL){
 

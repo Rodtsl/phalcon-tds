@@ -1,10 +1,4 @@
-<html>
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-</head>
-<body>
+{{link_to("user/form", "<i class='add user icon'></i>  Nouvel Utilisateur...") }}
 <table class="ui celled table">
     <thead>
     <tr>
@@ -25,13 +19,9 @@
         <td>{{user.getEmail()}}</td>
         <td>{{user.getRole().getName()}}</td>
         <td>
+            {{link_to("user/form/"~user.getId(), "<button class='ui icon button'><i class='edit icon'></i></button>") }}
             <button>
-                <i class="edit icon">
-
-                </i>
-            </button>
-            <button>
-                <i class="delete icon">
+                <i class="remove icon">
 
                 </i>
             </button>
@@ -41,7 +31,3 @@
 </table>
 
 
-
-
-
-</body>

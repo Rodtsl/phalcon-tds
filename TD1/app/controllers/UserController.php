@@ -33,7 +33,7 @@ class UserController extends ControllerBase
                     $users->setFirstname($prenom);}
 
                 $login = $_POST["login"];
-                $mdp = $_POST["password"];
+                $mdp = $_POST["mdp"];
                 $mail = $_POST["mail"];
                 $role = $_POST["role"];
                 $users->setLogin($login);
@@ -41,6 +41,7 @@ class UserController extends ControllerBase
                 $users->setEmail($mail);
                 $users->setIdrole($role);
                 $users->save();
+
                 $users = new User();
             }
     }

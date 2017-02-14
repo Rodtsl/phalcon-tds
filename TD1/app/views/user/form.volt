@@ -3,18 +3,18 @@
     <div class="three fields">
             <div class="field">
                 <label>Prénom</label>
-                <input type="text" value="{{ user.getFirstName() }}">
+                <input type="text" name="prenom" value="{{ user.getFirstName() }}">
             </div>
             <div class="field">
                 <label>Nom</label>
-                <input type="text" value="{{ user.getLastName() }}">
+                <input type="text" value="{{ user.getLastName() }}" name="nom">
             </div>
             <div class="field">
                 <label>Role</label>
                 <select class="ui simple dropdown item">
                     <div class="menu">
                     {% for role in roles %}
-                        <option value="{{ role.getId() }}" {% if(user.getId()!=null) %}
+                        <option name="role" value="{{ role.getId() }}" {% if(user.getId()!=null) %}
                                 {% if(user.getRole().getId()==role.getId()) %}selected{% endif %}
                                 {% endif %}>{{ role.getName() }}
                         </option>
@@ -25,11 +25,15 @@
             </br>
                 <div class="field">
                     <label>E-mail</label>
-                    <input type="email" placeholder="joe@schmoe.com" value="{{ user.getEmail() }}" >
+                    <input name="mail" type="email" placeholder="joe@schmoe.com" value="{{ user.getEmail() }}" >
                 </div>
             <div class="field">
                 <label>Mot de passe</label>
-                <input type="password" placeholder="******" value="{{ user.getPassword() }}">
+                <input name="mdp" type="password" placeholder="******" value="{{ user.getPassword() }}">
+            </div>
+            <div class="field">
+                <label>login</label>
+                <input name="login" type="text" value="{{ user.getLogin() }}">
             </div>
         </div>
     </div>
